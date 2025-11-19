@@ -1,0 +1,194 @@
+/* --- Vistas Principales --- */
+.view-container {
+    display: none;
+}
+.view-container.active {
+    display: block;
+}
+
+/* --- Encabezado de Dashboard --- */
+.dashboard-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+.dashboard-header h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+/* --- Estadísticas --- */
+.dashboard-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+}
+.stat-card {
+    background-color: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    text-align: center;
+}
+.stat-card__value {
+    font-size: 36px;
+    font-weight: bold;
+    color: #1e3a5f;
+    margin-bottom: 10px;
+}
+.stat-card__label {
+    color: #666;
+    font-size: 14px;
+}
+
+/* --- Dashboard de Vendedor --- */
+.seller-dashboard__add-btn {
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 30px;
+    transition: background-color 0.3s;
+}
+.seller-dashboard__add-btn:hover {
+    background-color: #229954;
+}
+
+/* --- Tarjeta de Gestión (Admin y Vendedor) --- */
+.mgmt-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+.mgmt-card__image {
+    width: 100px;
+    height: 100px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 12px;
+    flex-shrink: 0;
+}
+.mgmt-card__info {
+    flex: 1;
+}
+.mgmt-card__info h4 {
+    color: #1e3a5f;
+    margin-bottom: 5px;
+}
+.mgmt-card__info p {
+    font-size: 14px;
+    color: #666;
+    margin: 5px 0;
+}
+.mgmt-card__info .price {
+    color: #27ae60;
+    font-weight: bold;
+    margin-top: 10px;
+}
+.mgmt-card__info .seller {
+    color: #999;
+    font-size: 12px;
+}
+.mgmt-card__actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* --- Dashboard de Admin --- */
+.admin-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #eee;
+}
+.admin-tab {
+    padding: 15px 30px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 3px solid transparent;
+    cursor: pointer;
+    font-weight: 600;
+    color: #666;
+    transition: all 0.3s;
+}
+.admin-tab.active {
+    color: #1e3a5f;
+    border-bottom-color: #1e3a5f;
+}
+.admin-content {
+    display: none;
+}
+.admin-content.active {
+    display: block;
+}
+
+/* Tarjeta de Usuario (Admin) */
+.user-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.user-card__info {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+.user-card__avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+}
+.user-card__details h4 {
+    margin-bottom: 5px;
+    color: #1e3a5f;
+}
+.user-card__details p {
+    font-size: 14px;
+    color: #666;
+}
+.user-card__role {
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-left: 10px;
+}
+.user-card__role--buyer {
+    background-color: #e3f2fd;
+    color: #1976d2;
+}
+.user-card__role--seller {
+    background-color: #f3e5f5;
+    color: #7b1fa2;
+}
