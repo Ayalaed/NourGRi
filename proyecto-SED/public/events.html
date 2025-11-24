@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todos los Eventos | Eventspot</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="dashboard-page">
+
+    <!-- HEADER -->
+    <header class="dashboard-header">
+        <div class="header-content">
+            <h1 class="header-brand">Eventspot</h1>
+            
+            <div class="search-wrapper">
+                <!-- Icono Search SVG -->
+                <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+                <input type="text" id="search-input" class="search-input-modern" placeholder="Buscar evento...">
+            </div>
+
+            <button id="logout-button" class="btn-logout-modern">
+                <!-- Icono LogOut SVG -->
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+                Cerrar Sesión
+            </button>
+        </div>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <div class="main-wrapper">
+        
+        <!-- Título -->
+        <div class="section-header">
+            <h2 class="section-title">Todos los Eventos</h2>
+            <p class="section-subtitle">Descubre y gestiona tus eventos</p>
+        </div>
+
+        <!-- Barra de Control (Tabs y Botón Crear) -->
+        <div class="controls-bar">
+            <div class="tabs-group">
+                <!-- Tab Activa (Todos) -->
+                <button class="tab-btn active" disabled>Todos</button>
+                
+                <!-- Tab Inactiva (Mis Eventos) - OCULTA POR DEFECTO -->
+                <!-- Importante: display: none; se muestra solo si el JS detecta que eres Creador -->
+                <button id="my-events-tab" class="tab-btn inactive" onclick="window.location.href='my-events.html'" style="display: none;">
+                    Mis Eventos
+                </button>
+            </div>
+
+            <!-- Botón Crear - OCULTO POR DEFECTO -->
+            <!-- Importante: display: none; se muestra solo si el JS detecta que eres Creador -->
+            <button id="create-event-btn" class="btn-create-modern" onclick="window.location.href='create-event.html'" style="display: none;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                Crear Evento
+            </button>
+        </div>
+
+        <!-- Grid de Eventos -->
+        <div id="events-container" class="events-grid">
+            <!-- JS inyectará las tarjetas aquí -->
+        </div>
+
+    </div>
+
+    <script src="js/events.js"></script>
+    <script>
+        // Lógica de Logout
+        document.getElementById('logout-button').addEventListener('click', () => {
+            if (confirm('¿Cerrar sesión?')) {
+                localStorage.clear();
+                window.location.href = 'index.html';
+            }
+        });
+    </script>
+</body>
+</html>

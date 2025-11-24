@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Crear Evento | Eventspot</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="dashboard-page">
+
+  <header class="dashboard-header">
+    <div class="header-content">
+      <h1 class="header-brand">Eventspot</h1>
+      <div style="flex:1;"></div>
+      <button class="btn-logout-modern" onclick="window.location.href='my-events.html'">
+        Cancelar y Volver
+      </button>
+    </div>
+  </header>
+
+  <main class="main-wrapper">
+    <div class="section-header" style="text-align: center;">
+      <h2 class="section-title">Publicar Nuevo Evento</h2>
+      <p class="section-subtitle">Completa los detalles para crear tu evento</p>
+    </div>
+
+    <div class="form-container-card">
+      <form id="create-event-form">
+
+        <div class="form-section">
+          <h3 class="section-title">📋 Información Principal</h3>
+
+          <div style="margin-bottom: 1.5rem;">
+            <label class="modern-label" for="title">Título del Evento *</label>
+            <input type="text" id="title" class="modern-input" placeholder="Ej: Workshop de Diseño UX" required />
+          </div>
+
+          <div style="margin-bottom: 1.5rem;">
+            <label class="modern-label" for="description">Descripción *</label>
+            <textarea id="description" class="modern-textarea" rows="4" placeholder="¿De qué trata el evento?" required></textarea>
+          </div>
+
+          <div class="form-grid-2">
+            <div>
+              <label class="modern-label" for="category">Categoría</label>
+              <select id="category" class="modern-select">
+                <option value="General">General</option>
+                <option value="Tecnología">Tecnología</option>
+                <option value="Negocios">Negocios</option>
+                <option value="Arte">Arte y Cultura</option>
+                <option value="Social">Social</option>
+              </select>
+            </div>
+            <div>
+              <label class="modern-label" for="capacity">Capacidad (Personas)</label>
+              <input type="number" id="capacity" class="modern-input" placeholder="Ej: 50" min="1" />
+            </div>
+          </div>
+        </div>
+
+        <div class="form-section">
+          <h3 class="section-title">📅 Cuándo y Dónde</h3>
+
+          <div class="form-grid-2" style="margin-bottom: 1.5rem;">
+            <div>
+              <label class="modern-label" for="date">Fecha *</label>
+              <input type="date" id="date" class="modern-input" required />
+            </div>
+            <div>
+              <label class="modern-label" for="hour">Hora de Inicio *</label>
+              <input type="time" id="hour" class="modern-input" required />
+            </div>
+          </div>
+
+          <div style="margin-bottom: 1.5rem;">
+            <label class="modern-label" for="location">Ubicación / Link *</label>
+            <input type="text" id="location" class="modern-input" placeholder="Ej: Calle Principal 123 o Enlace de Zoom" required />
+          </div>
+        </div>
+
+        <div class="form-section">
+          <h3 class="section-title">📞 Contacto</h3>
+          <div style="margin-bottom: 1.5rem;">
+            <label class="modern-label" for="contact">Email de organizador *</label>
+            <input type="email" id="contact" class="modern-input" required />
+          </div>
+        </div>
+
+        <div class="card-actions" style="justify-content:flex-end; border-top:none;">
+          <button type="submit" class="btn-primary-block" style="width:auto; padding:0.8rem 2rem; margin-top:0;">
+            Publicar Evento
+          </button>
+        </div>
+
+      </form>
+    </div>
+  </main>
+
+  <script src="js/create-event.js"></script>
+</body>
+</html>

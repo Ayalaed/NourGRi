@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Registro | Eventspot</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="login-page">
+  <div class="split-screen">
+    <aside class="left-pane" aria-hidden="true">
+      <div class="welcome-text">
+        <h1>Bienvenido a Eventspot</h1>
+        <p>Crea, comparte y gestiona tus eventos en un solo lugar.</p>
+      </div>
+      <div class="sun"></div>
+      <div class="mountain-back"></div>
+      <div class="mountain-mid"></div>
+      <div class="forest"></div>
+    </aside>
+
+    <main class="right-pane" role="main">
+      <div class="login-form-container" aria-labelledby="registro-title">
+        <h2 id="registro-title">Crear Cuenta</h2>
+        <p>Ingresa tus datos para registrarte</p>
+
+        <form id="register-form" novalidate>
+          <div class="input-group">
+            <label for="fullName">Nombre Completo</label>
+            <input id="fullName" name="fullName" type="text" placeholder="Ej: Juan Pérez" required class="modern-input" />
+          </div>
+
+          <div class="input-group">
+            <label for="email">Correo Electrónico</label>
+            <input id="email" name="email" type="email" placeholder="ejemplo@correo.com" required class="modern-input" />
+          </div>
+
+          <div class="input-group">
+            <label for="password">Contraseña <small style="color:#6b7280;display:block;margin-top:4px">Mínimo 8 caracteres</small></label>
+            <input id="password" name="password" type="password" minlength="8" placeholder="Crea una contraseña segura" required class="modern-input" />
+          </div>
+
+          <div class="input-group">
+            <label for="role">¿Qué deseas hacer?</label>
+            <select id="role" name="role" class="modern-select">
+              <option value="user">Solo ver eventos (Usuario)</option>
+              <option value="organizer">Crear y gestionar eventos (Organizador)</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn-create-modern" style="width:100%">Registrarse</button>
+
+          <p style="text-align:center;margin-top:0.9rem;color:#6b7280;font-size:0.9rem">
+            ¿Ya tienes una cuenta? <a href="index.html" style="color:#daa49a;font-weight:700">Inicia sesión aquí</a>
+          </p>
+        </form>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    document.getElementById('register-form').addEventListener('submit', async function(e){
+      e.preventDefault();
+      const name = document.getElementById('fullName').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const pass = document.getElementById('password').value;
+      const role = document.getElementById('role').value;
+
+      if (!name || !email || pass.length < 8) {
+        alert('Por favor completa correctamente los campos. La contraseña debe tener al menos 8 caracteres.');
+        return;
+      }
+
+      try {
+        const res = await fetch('/api/register', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name, email, password: pass, role })
+        });
+        const data = await res.json();
+        if (!res.ok) {
+          alert(data.message || 'Error en el registro');
+          return;
+        }
+        alert('Registro exitoso. Serás redirigido a la página principal.');
+        window.location.href = 'index.html';
+      } catch (err) {
+        alert('Error de red: ' + err.message);
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestionar Eventos | Admin</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="website-title">Panel de Administración</div>
+        <nav>
+            <button id="back-to-events-button" style="background: transparent; border: 1px solid white; color: white; margin-right: 10px;">← Volver</button>
+            <button id="logout-button" class="logout-btn">Cerrar Sesión</button>
+        </nav>
+    </header>
+    
+    <div class="container">
+        <h1>Gestionar Eventos</h1>
+        <p style="text-align: center; color: #666;">Como Super Admin, puedes editar o eliminar cualquier evento.</p>
+        
+        <div id="manage-events-container">
+            </div>
+    </div>
+
+    <div id="edit-popup" class="popup hidden">
+        <div class="popup-content">
+            <h2>Editar Evento</h2>
+            <form id="edit-event-form">
+                <input type="hidden" id="edit-id">
+
+                <label for="edit-title">Título:</label>
+                <input type="text" id="edit-title" required>
+
+                <div style="display: flex; gap: 10px;">
+                    <div style="flex: 1;">
+                        <label for="edit-date">Fecha:</label>
+                        <input type="date" id="edit-date" required>
+                    </div>
+                    </div>
+
+                <label for="edit-location">Ubicación:</label>
+                <input type="text" id="edit-location" required>
+
+                <label for="edit-description">Descripción:</label>
+                <textarea id="edit-description" required style="min-height: 100px;"></textarea>
+
+                <div class="popup-actions">
+                    <button type="button" id="cancel-edit">Cancelar</button>
+                    <button type="submit">Guardar Cambios</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/manage-events.js"></script>
+    <script>
+        // Logout rápido
+        document.getElementById('logout-button').addEventListener('click', () => {
+            if (confirm('¿Cerrar sesión?')) {
+                localStorage.clear();
+                window.location.href = 'index.html';
+            }
+        });
+        // Botón volver
+        document.getElementById('back-to-events-button').addEventListener('click', () => {
+            window.location.href = 'events.html';
+        });
+    </script>
+</body>
+</html>

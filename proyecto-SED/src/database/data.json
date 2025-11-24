@@ -1,0 +1,29 @@
+{
+  "users": [
+    {
+      "id": "7cce5cb5-7c7f-4a1d-9fac-11557b949631",
+      "name": "lupe",
+      "email": "111@gmail.com",
+      "password": "7c14ccba168d7999d93278ff6aeb500a:71e16e56b7bc3c468ede5da4594aeb3b12a34896867876a38a21df28bdbe3470856a724b49ad4162a2dfd178be8a8ab4322700e2f53e9525111b6126a9e974c9",
+      "role": "organizer",
+      "avatar": "default-avatar.png"
+    },
+    {
+      "id": "dc270ec2-484b-48dc-bae8-899c0e9fe93f",
+      "name": "lupe",
+      "email": "123@gmail.com",
+      "password": "e948cb3bc628de984ade5a733e49bafb:0b2cbe242064d7aa9f6425da479733ee63237d8f222f8e620ad5903b6256a97b914882ad3014f4427f94b66f906e7d22fe402aff5a2c2fd292e8ea9cdd5832a4",
+      "role": "organizer",
+      "avatar": "default-avatar.png"
+    },
+    {
+      "id": "094901d8-eb70-4e63-a3a3-d5804b254668",
+      "name": "adriana",
+      "email": "negra123@gmail.com",
+      "password": "db39d2a9c5d98453b543e4ab79e51970:ca76a0e6daee73738de75abb63095564c0b163ae642dee9de3ed264c26424467423091c02eaece8fe4f6987a35502f8e641eb36964be36612ba41171c29068ac",
+      "role": "user",
+      "avatar": "default-avatar.png"
+    }
+  ],
+  "events": []
+}
